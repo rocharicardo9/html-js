@@ -5,11 +5,19 @@ function validaNome(nomeCompleto){
     return nomeComoArray.length >= 2;
 }
 
-form.addEventListener('submit',function(e){
+form.addEventListener('submit',function(e) {
+    let formEvalido = false;
     e.preventDefault();
 
-    cont nomeBeneficiario = document.getElementById('nome-beneficiario');
-    if (!validaNome(nomeBeneficiario.value)) {
+    const nomeBeneficiario = document.getElementById('nome-beneficiario');
+    const numeroContaBeneficiario = document.getElementById('numero-conta');
+    const valorDeposito = document.getElementById('valor-deposito');
+    const mensagemSucesso = `Montante de: ${ValorDeposito}depositando para o cliente: ${nomeBeneficiario} - conta: ${numeroContaBeneficiario}`;
+
+    formEvalido = validaNome(nomeBeneficiario.value)
+    if (formEvalido) {
+        alert(mensagemSucesso);
+    } else {
         alert("O nome não esta completo");
     }
 })
